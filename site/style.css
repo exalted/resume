@@ -3,6 +3,10 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+
+  /* Uncomment following lines to debug */
+  /*outline: 1px solid limegreen !important;*/
+  /*background: rgb(0 100 0 / 0.1) !important;*/
 }
 
 body {
