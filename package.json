@@ -1,0 +1,29 @@
+{
+  "name": "resume",
+  "version": "1.0.0",
+  "description": "``` npx --yes onchange --initial site -- node site/build.js npx serve docs ```",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "site:build": "node site/build.js",
+    "site:dev:watch": "npx --yes onchange --initial site -- npm run site:build",
+    "site:dev:serve:local": "npx --yes serve --no-clipboard --no-compression --no-port-switching docs",
+    "site:dev:serve:public": "ngrok http 3000",
+    "site:dev": "npx --yes stmux -- [ [ \"npm run site:dev:watch\" ] : [ --size 1/3 \"npm run site:dev:serve:local\" .. \"npm run site:dev:serve:public\" ] ]",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/exalted/resume.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/exalted/resume/issues"
+  },
+  "homepage": "https://github.com/exalted/resume#readme"
+}

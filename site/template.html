@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{NAME}} - Resume</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Asap+Condensed:wght@300;400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <!-- CONTENT -->
+  </div>
+  <script>
+    (function(){
+      var s=7;
+      function d(o){return o.map(function(c){return String.fromCharCode(c-s)}).join("")}
+      document.querySelectorAll(".protected").forEach(function(el){
+        el.addEventListener("click",function(){
+          if(el.dataset.o){
+            var val=d(JSON.parse(el.dataset.o));
+            var type=el.dataset.type;
+            var href=type==="email"?"mailto:"+val:type==="phone"?"tel:"+val:null;
+            if(href){
+              var a=document.createElement("a");
+              a.href=href;
+              a.textContent=val;
+              el.textContent="";
+              el.appendChild(a);
+            }else{
+              el.textContent=val;
+            }
+            el.removeAttribute("data-o");
+            el.removeAttribute("data-type");
+            el.classList.remove("protected");
+            el.removeAttribute("title");
+          }
+        });
+      });
+    })();
+  </script>
+</body>
+</html>

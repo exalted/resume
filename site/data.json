@@ -1,0 +1,78 @@
+{
+  "name": "Ali Servet Donmez",
+  "contact": {
+    "email": "Set PII_EMAIL environment variable",
+    "phone": "Set PII_PHONE environment variable",
+    "location": "Rimini, Italy"
+  },
+  "sections": [
+    {
+      "title": "",
+      "blocks": [
+        {
+          "rows": [
+            { "title": "Year of Birth", "type": "simple", "value": "1985" },
+            { "title": "Education", "type": "simple", "value": "*Bachelor in Computer Science* (2004—2009)\nAlma Mater Studiorum - University of Bologna, Italy" },
+            { "title": "Nationality", "type": "simple", "value": "Turkish & Italian" },
+            { "title": "Languages", "type": "simple", "value": "English, Italian and Turkish (fluent in all, written and spoken)" }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Skills",
+      "blocks": [
+        {
+          "rows": [
+            {
+              "title": "Programming Languages",
+              "type": "table",
+              "value": [
+                ["JavaScript/TypeScript", "🔴 TODO"],
+                ["HTML & CSS", "🔴 TODO"],
+                ["_more…_", "Scripting in _Bash_, _Python_, and _Ruby_ to get the job done."]
+              ]
+            },
+            { "title": "Frameworks", "type": "simple", "value": "🔴 TODO" },
+            { "title": "Services & Tools", "type": "simple", "value": "Git, GitHub" }
+          ]
+        },
+        {
+          "rows": [
+            {
+              "title": "Past Experience",
+              "type": "simple",
+              "value": "Objective-C, C#, jQuery, SaSS, CoffeeScript ❚ ASP.NET MVC ❚ Heroku"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Background",
+      "blocks": [
+        {
+          "rows": [
+            { "title": "2008—Today", "type": "simple", "value": "Apex-Net S.r.l. (Cesena, Italy)\nApex-Net is a medium-sized Italian B2B software company. I am currently working as a *lead senior iOS and .NET developer* for mobile app teams, as well as for web front end, API design and back end systems development in various projects." }
+          ]
+        },
+        {
+          "rows": [
+            { "title": "2008", "type": "simple", "value": "*UniCredit Global Information Services* (Milan, Italy)\nUnicredit Global Information Services (UGIS) is the IT supplier of UniCredit Group, one of the biggest fnancial groups in Europe.\nDuring my two months internship I analyzed and studied their datacenter infrastructure and presented a presented a written report of my learnings." }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Other",
+      "blocks": [
+        {
+          "rows": [
+            { "title": "CS Students Association", "type": "simple", "value": "2005—2008: Computer systems administrator and board member of CS students association" },
+            { "title": "Open Source", "type": "simple", "value": "2005—Today: Founder and administrator of www.gnu.org Turkish translation team" }
+          ]
+        }
+      ]
+    }
+  ]
+}
