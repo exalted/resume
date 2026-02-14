@@ -25,16 +25,18 @@
         {
           "rows": [
             {
-              "title": "Programming Languages",
+              "title": "Programming",
               "type": "table",
               "value": [
                 ["JavaScript/TypeScript", "🔴 TODO"],
                 ["HTML & CSS", "🔴 TODO"],
-                ["_more…_", "Scripting in _Bash_, _Python_, and _Ruby_ to get the job done."]
+                ["GraphQL", "🔴 TODO"],
+                ["_more…_", "Bash, Python, and Ruby for scripting"]
               ]
             },
-            { "title": "Frameworks", "type": "simple", "value": "🔴 TODO" },
-            { "title": "Services & Tools", "type": "simple", "value": "Git, GitHub" }
+            { "title": "Frameworks", "type": "simple", "value": "React, Express.js" },
+            { "title": "Data Stores", "type": "simple", "value": "MySQL, Redis, Elasticsearch" },
+            { "title": "Other", "type": "simple", "value": "Git, GitHub, Tailwind CSS" }
           ]
         },
         {
@@ -42,7 +44,7 @@
             {
               "title": "Past Experience",
               "type": "simple",
-              "value": "Objective-C, C#, jQuery, Sass, CoffeeScript ❚ ASP.NET MVC ❚ Heroku"
+              "value": "Objective-C, C#, jQuery, Sass, CoffeeScript ❚ ASP.NET MVC ❚ Heroku, PostgreSQL, SQLite, DynamoDB"
             }
           ]
         }
@@ -53,12 +55,17 @@
       "blocks": [
         {
           "rows": [
-            { "title": "2008—Today", "type": "simple", "value": "Apex-Net S.r.l. (Cesena, Italy)\nApex-Net is a medium-sized Italian B2B software company. I am currently working as a *lead senior iOS and .NET developer* for mobile app teams, as well as for web front end, API design and back end systems development in various projects." }
+        { "title": "2017—2025", "type": "simple", "value": "Balsamiq _@Remote_\n🔴 Balsamiq is the leading low-fidelity wireframing software company. Because of my diverse experience in multiple programming languages and technologies I joined Balsamiq to take responsibitlies of various custom internal software. Thanks to Balsamiq's flat structure over the years I wore many hats as I've kept maintaining existing software, architecting and developing new ones, " }
           ]
         },
         {
           "rows": [
-            { "title": "2008", "type": "simple", "value": "*UniCredit Global Information Services* (Milan, Italy)\nUnicredit Global Information Services (UGIS) is the IT supplier of UniCredit Group, one of the biggest fnancial groups in Europe.\nDuring my two months internship I analyzed and studied their datacenter infrastructure and presented a presented a written report of my learnings." }
+            { "title": "2008—2017", "type": "simple", "value": "WEDO (formerly Apex-Net) _@Cesena, Italy_\nWEDO was a medium-sized Italian B2B software company. WEDO has given me significant opportunities to grow and learn, progressing into a *senior developer* and *technical lead* within a team responsible for developing mobile and full-stack web applications." }
+          ]
+        },
+        {
+          "rows": [
+            { "title": "2008", "type": "simple", "value": "*UniCredit* Global Information Services _@Milan, Italy_\nUniCredit Global Information Services (UGIS) is the IT service provider for the UniCredit Group, one of Europe’s largest financial institutions. During my two-month internship, I visited, analyzed and studied the company’s data center infrastructure and presented a report summarizing my findings." }
           ]
         }
       ]
