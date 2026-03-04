@@ -101,10 +101,13 @@ function renderTableRow(row) {
 }
 
 function renderRow(row) {
+  if (row.type === "simple") {
+    return entry(row.title, row.value);
+  }
   if (row.type === "table") {
     return renderTableRow(row);
   }
-  return entry(row.title, row.value);
+  throw new Error(`Unknown row type: ${row.type}`);
 }
 
 function generateSection(section) {

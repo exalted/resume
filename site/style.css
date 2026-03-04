@@ -5,8 +5,8 @@
   padding: 0;
 
   /* Uncomment following lines to debug */
-  /*outline: 1px solid limegreen !important;*/
-  /*background: rgb(0 100 0 / 0.1) !important;*/
+  /*outline: 1px solid limegreen !important;
+  background: rgb(0 100 0 / 0.1) !important;*/
 }
 
 body {
@@ -131,8 +131,13 @@ strong,
   align-items: start;
 }
 
+.data-table {
+  border-collapse: collapse;
+  margin-top: -2px;
+}
+
 .data-table td {
-  padding-right: 20px;
+  padding: 0 20px 0 0;
   vertical-align: top;
   text-wrap: pretty;
 }
@@ -203,44 +208,5 @@ strong,
     padding-right: 0;
     margin-bottom: 2px;
     width: fit-content;
-  }
-
-}
-
-/* Print styles */
-@media print {
-  body {
-    font-size: 11pt;
-    line-height: 1.4;
-  }
-
-  .container {
-    max-width: 90%;
-    margin: 0 auto;
-    padding: 0;
-  }
-
-  .header {
-    margin-bottom: 30px;
-  }
-
-  .header h1 {
-    font-size: 18pt;
-  }
-
-  section {
-    break-inside: avoid;
-    page-break-inside: avoid;
-    margin-bottom: 25px;
-  }
-
-  section h2 {
-    font-size: 12pt;
-    margin-bottom: 15px;
-  }
-
-  .entry-block {
-    break-inside: avoid;
-    page-break-inside: avoid;
   }
 }

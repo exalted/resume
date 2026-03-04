@@ -11,8 +11,16 @@
       "blocks": [
         {
           "rows": [
-            { "title": "Year of Birth", "type": "simple", "value": "1985" },
-            { "title": "Education", "type": "simple", "value": "*Bachelor in Computer Science*, Italy (2004—2009)\nUniversity of Bologna - Alma Mater Studiorum" },
+            { "title": "Summary", "type": "simple", "value": "I started writing code professionally in 2008 and have since worked across the full stack, building web and iOS applications, internal tools, and cloud services. Earlier in my career this naturally led to a technical lead role, managing a development team and delivering enterprise projects. These days I use AI extensively in my work and write mostly JavaScript/TypeScript. Over the years I have worked with many languages and platforms — from enterprise B2B applications to AI services, multi-region data residency features, infrastructure-as-code with AWS CDK, security compliance, and CI/CD across 15+ repositories. I pick up new technologies quickly and enjoy owning projects end to end." }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Personal",
+      "blocks": [
+        {
+          "rows": [
             { "title": "Languages", "type": "simple", "value": "English, Italian and Turkish (fluent in all, written and spoken)" },
             { "title": "Nationalities", "type": "simple", "value": "Turkish/Italian" }
           ]
@@ -25,59 +33,61 @@
         {
           "rows": [
             {
-              "title": "Programming",
+              "title": "Current",
               "type": "table",
               "value": [
-                ["JavaScript/TypeScript", "🔴 TODO"],
-                ["HTML & CSS", "🔴 TODO"],
-                ["GraphQL", "🔴 TODO"],
-                ["🔴 TODO", "🔴 TODO"],
-                ["_more…_", "Bash, Python, and Ruby for scripting"]
+                ["Languages", "JavaScript/TypeScript • HTML • CSS"],
+                ["Frameworks & Libs", "Node.js • Express.js • React"],
+                ["Data Stores", "MySQL • Redis • Elasticsearch"],
+                ["Scripting", "Bash • Python • Ruby"]
               ]
             },
-            { "title": "Frameworks", "type": "simple", "value": "React, Express.js" },
-            { "title": "Data Stores", "type": "simple", "value": "MySQL, Redis, Elasticsearch" },
-            { "title": "Other", "type": "simple", "value": "Git, GitHub, Tailwind CSS, Node.js" }
-          ]
-        },
-        {
-          "rows": [
             {
-              "title": "Past Experience",
+              "title": "Past",
               "type": "simple",
-              "value": "Objective-C, C#, jQuery, Sass, CoffeeScript ❚ ASP.NET MVC ❚ Heroku, PostgreSQL, SQLite, DynamoDB"
-            }
+              "value": "C# • Objective-C • jQuery • Sass • CoffeeScript • iOS • ASP.NET MVC • Heroku • PostgreSQL • SQLite • DynamoDB"
+            },
+            { "title": "More", "type": "simple", "value": "Git • GitHub • AWS • Tailwind CSS" }
           ]
-        }
-      ]
+        }      ]
     },
     {
       "title": "Background",
       "blocks": [
         {
           "rows": [
-        { "title": "2017—2025", "type": "simple", "value": "*Balsamiq* _@Remote_\nBalsamiq is the leading low-fidelity wireframing software company. Because of my diverse past experience with multiple programming languages and technologies I initially joined Balsamiq to take responsibitlies of various existing custom internal tools. Over the years, thanks to Balsamiq's flat structure, I wore many more hats:\n• Architect and develop new internal tools\n• Manage *Elasticsearch* clusters for log management\n• Lead cloud infrastructure modernization efforts with *AWS CDK*\n• Issue audits for GDPR-compilancy\n• Manage security and compliance initiatives (SOC2/Vanta, Bugcrowd, HackerOne)\n• Implement data residency features\n• Integrate for observability and analytics (PostHog, Klaviyo)\n• Maintain CI/CD pipelines using GitHub Actions across 15+ repositories\n• Build *AI* services" }
+        { "title": "2017–2025", "type": "simple", "value": "*Balsamiq* _(Remote)_\n🔴 TODO Balsamiq is the leading low-fidelity wireframing software company. Because of my diverse past experience with multiple programming languages and technologies I initially joined Balsamiq to take responsibitlies of various existing custom internal tools. Over the years, thanks to Balsamiq's flat structure, I wore many more hats:\n• Architect and develop internal tools (payment & subscription management via *Stripe* integration, e-commerce, project management)\n• Manage *Elasticsearch* clusters for log management\n• Lead cloud infrastructure modernization efforts with *AWS CDK*\n• Issue audits for GDPR-compilancy\n• Manage security and compliance initiatives (SOC2/Vanta, Bugcrowd, HackerOne)\n• Implement data residency features\n• Integrate for observability and analytics (PostHog, Klaviyo)\n• Maintain CI/CD pipelines using GitHub Actions across 15+ repositories\n• Build *AI* services" }
           ]
         },
         {
           "rows": [
-            { "title": "2008—2017", "type": "simple", "value": "WEDO _@Cesena, Italy_\nThis medium-sized B2B software company has given me significant opportunities to grow and learn. I progressed into a *senior developer* and *technical lead* within a small team responsible for developing mobile and full-stack web applications." }
+            { "title": "2008–2017", "type": "simple", "value": "WEDO _(Cesena, Italy)_\nAt WEDO I had significant opportunities to grow into a *senior developer (full-stack + iOS)* and *technical lead* of a team responsible for developing mobile and web applications while working closely with noteworthy B2B clients such as *Bocconi* and and *CINECA*." }
           ]
         },
         {
           "rows": [
-            { "title": "2008", "type": "simple", "value": "*UniCredit* Global Information Services (UGIS) _@Milan, Italy_\nUGIS is the IT service provider for the UniCredit Group, one of Europe’s largest banks. During my two-month internship, I visited, analyzed and studied their data center infrastructure and prepared a final report of my learning." }
+            { "title": "2008", "type": "simple", "value": "*UniCredit* _(Milan, Italy)_\nDuring my internship at UniCredit Global Information Services (UGIS), IT services provider for one of Europe’s largest banks, I visited, analyzed and studied the infrastructure of their data center and prepared a final report of my learnings." }
           ]
         }
       ]
     },
     {
-      "title": "Other",
+      "title": "Education",
       "blocks": [
         {
           "rows": [
-            { "title": "CS Students Association", "type": "simple", "value": "2005—2008: Computer systems administrator and board member of CS students association" },
-            { "title": "Open Source", "type": "simple", "value": "2005—Today: Founder and administrator of www.gnu.org Turkish translation team" }
+            { "title": "2009 grad", "type": "simple", "value": "Bachelor in *Computer Science* _(Italy)_\nUniversity of Bologna - Alma Mater Studiorum" }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "More",
+      "blocks": [
+        {
+          "rows": [
+            { "title": "2005–2008", "type": "simple", "value": "Board member and sysadmin of university students association" },
+            { "title": "2005–Today", "type": "simple", "value": "Founder and admin of www.gnu.org Turkish translation team" }
           ]
         }
       ]
