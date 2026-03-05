@@ -59,6 +59,28 @@ body {
   cursor: pointer;
 }
 
+/* PDF download link */
+.pdf-download {
+  display: inline-block;
+  margin-top: 10px;
+  font-size: 0.85rem;
+  color: #2563EB;
+  text-decoration: none;
+  border: 1px solid #2563EB;
+  padding: 4px 14px;
+  border-radius: 4px;
+  transition: background-color 0.15s, color 0.15s;
+}
+
+.pdf-download:hover {
+  background-color: #2563EB;
+  color: #fff;
+}
+
+.pdf-download::after {
+  display: none !important;
+}
+
 
 /* Links */
 a {
@@ -91,7 +113,7 @@ section {
 section h2 {
   font-size: 1.7rem;
   font-weight: 700;
-  text-align: center;
+  text-align: left;
   margin-bottom: 12px;
   color: #171717;
 }
@@ -130,6 +152,33 @@ section h2:empty {
 
 .entry-value p + p {
   margin-top: 0.4em;
+}
+
+.entry-value ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.entry-value p + ul,
+.entry-value ul + p,
+.entry-value ul + ul {
+  margin-top: 0.4em;
+}
+
+.entry-value li {
+  padding-left: 1.2em;
+  position: relative;
+  line-height: 1.35;
+}
+
+.entry-value li::before {
+  content: "-";
+  position: absolute;
+  left: 0;
+}
+
+.entry-value li + li {
+  margin-top: 0.08em;
 }
 
 /* Background/Education entries with multiple fields */
@@ -186,6 +235,15 @@ strong,
 
 .skills-list span:not(:last-child)::after {
   content: ", ";
+}
+
+@media print {
+  .entry,
+  .entry-label,
+  .entry-value {
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
 }
 
 /* Responsive */

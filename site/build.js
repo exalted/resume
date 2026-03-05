@@ -80,12 +80,39 @@ function formatInline(text) {
   return result;
 }
 
-// Block formatting: inline formatting + bullet spacing + paragraph wrapping
+// Block formatting: inline formatting + bullet spacing + paragraph/list wrapping
 function formatText(text) {
-  let result = formatInline(text);
-  result = result.replace(/ • /g, "\u00a0• ");
-  result = result.split("\n").map((p) => `<p>${p}</p>`).join("");
-  return result;
+  if (typeof text !== "string") return text;
+
+  const lines = text.split("\n");
+  const blocks = [];
+  let listItems = [];
+
+  function formatLine(line) {
+    return formatInline(line).replace(/ • /g, "\u00a0• ");
+  }
+
+  function flushList() {
+    if (!listItems.length) return;
+    blocks.push(`<ul>${listItems.map((item) => `<li>${formatLine(item)}</li>`).join("")}</ul>`);
+    listItems = [];
+  }
+
+  for (const line of lines) {
+    const bulletMatch = line.match(/^\s*[-*]\s+(.+)$/);
+    if (bulletMatch) {
+      listItems.push(bulletMatch[1].trim());
+      continue;
+    }
+
+    flushList();
+
+    if (!line.trim()) continue;
+    blocks.push(`<p>${formatLine(line)}</p>`);
+  }
+
+  flushList();
+  return blocks.join("");
 }
 
 function entry(label, value) {
@@ -156,6 +183,7 @@ function generateHeader(data) {
     <span class="protected" data-o="${escapeHtml(phoneObf)}" data-type="phone" title="Click to reveal">${escapeHtml(phoneMasked)}</span>
     <span>${formatInline(data.contact.location)}</span>
   </div>
+  <a href="ali-servet-donmez_resume.pdf" download class="pdf-download">Download PDF</a>
 </header>\n`;
 }
 
@@ -174,25 +202,39 @@ function generateContent(data) {
   return html;
 }
 
-// Generate output
-const content = generateContent(data);
-let output = template.replace("<!-- CONTENT -->", content);
-output = output.replace("{{NAME}}", escapeHtml(data.name));
+// Exports for use by other scripts (e.g., build-pdf.js)
+module.exports = {
+  escapeHtml,
+  formatInline,
+  formatText,
+  entry,
+  renderRow,
+  renderTableRow,
+  generateSection,
+  generateContent,
+};
 
-// Ensure docs directory exists
-if (!fs.existsSync(DOCS_DIR)) {
-  fs.mkdirSync(DOCS_DIR, { recursive: true });
+if (require.main === module) {
+  // Generate output
+  const content = generateContent(data);
+  let output = template.replace("<!-- CONTENT -->", content);
+  output = output.replace("{{NAME}}", escapeHtml(data.name));
+
+  // Ensure docs directory exists
+  if (!fs.existsSync(DOCS_DIR)) {
+    fs.mkdirSync(DOCS_DIR, { recursive: true });
+  }
+
+  // Write output files
+  fs.writeFileSync(path.join(DOCS_DIR, "index.html"), output, "utf-8");
+  console.log("Generated: docs/index.html");
+
+  // Copy CSS
+  fs.copyFileSync(
+    path.join(SITE_DIR, "style.css"),
+    path.join(DOCS_DIR, "style.css")
+  );
+  console.log("Copied: docs/style.css");
+
+  console.log("\nBuild complete!");
 }
-
-// Write output files
-fs.writeFileSync(path.join(DOCS_DIR, "index.html"), output, "utf-8");
-console.log("Generated: docs/index.html");
-
-// Copy CSS
-fs.copyFileSync(
-  path.join(SITE_DIR, "style.css"),
-  path.join(DOCS_DIR, "style.css")
-);
-console.log("Copied: docs/style.css");
-
-console.log("\nBuild complete!");

@@ -7,7 +7,7 @@
     "doc": "docs"
   },
   "scripts": {
-    "site:build": "node site/build.js",
+    "site:build": "node site/build.js && node site/build-pdf.js",
     "site:dev:watch": "npx --yes onchange --initial site -- npm run site:build",
     "site:dev:serve:local": "npx --yes serve --no-clipboard --no-compression --no-port-switching docs",
     "site:dev:serve:public": "ngrok http 3000",
@@ -25,5 +25,8 @@
   "bugs": {
     "url": "https://github.com/exalted/resume/issues"
   },
-  "homepage": "https://github.com/exalted/resume#readme"
+  "homepage": "https://github.com/exalted/resume#readme",
+  "devDependencies": {
+    "puppeteer": "^24.38.0"
+  }
 }
