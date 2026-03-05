@@ -3,8 +3,7 @@
   "contact": {
     "email": "Set PII_EMAIL environment variable",
     "phone": "Set PII_PHONE environment variable",
-    "location": "Rimini, Italy",
-    "locationUrl": "https://maps.app.goo.gl/aXUqNdFuPNEXznL57"
+    "location": "[Rimini, Italy](https://maps.app.goo.gl/aXUqNdFuPNEXznL57)"
   },
   "sections": [
     {
@@ -78,7 +77,7 @@
       "blocks": [
         {
           "rows": [
-            { "title": "2009", "type": "simple", "value": "*Computer Science*, Bachelor @[University of Bologna](https://www.unibo.it) _(Italy)_" }
+            { "title": "2009", "type": "simple", "value": "*Computer Science*, Bachelor\n[University of Bologna](https://www.unibo.it) _(Italy)_" }
           ]
         }
       ]

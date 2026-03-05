@@ -67,22 +67,23 @@ function escapeHtml(text) {
     .replace(/'/g, "&#039;");
 }
 
-// Convert markdown-like syntax to HTML: *bold* and _italic_
-function formatText(text) {
+// Inline formatting: *bold*, _italic_, [text](url)
+function formatInline(text) {
   if (typeof text !== "string") return text;
   let result = escapeHtml(text);
-  // Bold: *text* (but not inside words)
   result = result.replace(/\*([^*]+)\*/g, "<strong>$1</strong>");
-  // Italic: _text_ (but not inside words)
   result = result.replace(/_([^_]+)_/g, "<em>$1</em>");
-  // Links: [text](url)
   result = result.replace(
     /\[([^\]]+)\]\(([^)]+)\)/g,
     '<a href="$2" target="_blank" rel="noopener noreferrer">$1</a>'
   );
-  // Keep bullet separators attached to preceding word
+  return result;
+}
+
+// Block formatting: inline formatting + bullet spacing + paragraph wrapping
+function formatText(text) {
+  let result = formatInline(text);
   result = result.replace(/ • /g, "\u00a0• ");
-  // Wrap in paragraphs
   result = result.split("\n").map((p) => `<p>${p}</p>`).join("");
   return result;
 }
@@ -153,7 +154,7 @@ function generateHeader(data) {
   <div class="contact-info">
     <span class="protected bold" data-o="${escapeHtml(emailObf)}" data-type="email" title="Click to reveal">${escapeHtml(emailMasked)}</span>
     <span class="protected" data-o="${escapeHtml(phoneObf)}" data-type="phone" title="Click to reveal">${escapeHtml(phoneMasked)}</span>
-    <span><a href="${escapeHtml(data.contact.locationUrl)}" target="_blank" rel="noopener noreferrer">${escapeHtml(data.contact.location)}</a></span>
+    <span>${formatInline(data.contact.location)}</span>
   </div>
 </header>\n`;
 }
