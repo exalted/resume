@@ -75,8 +75,15 @@ function formatText(text) {
   result = result.replace(/\*([^*]+)\*/g, "<strong>$1</strong>");
   // Italic: _text_ (but not inside words)
   result = result.replace(/_([^_]+)_/g, "<em>$1</em>");
-  // Line breaks
-  result = result.replace(/\n/g, "<br>");
+  // Links: [text](url)
+  result = result.replace(
+    /\[([^\]]+)\]\(([^)]+)\)/g,
+    '<a href="$2" target="_blank" rel="noopener noreferrer">$1</a>'
+  );
+  // Keep bullet separators attached to preceding word
+  result = result.replace(/ • /g, "\u00a0• ");
+  // Wrap in paragraphs
+  result = result.split("\n").map((p) => `<p>${p}</p>`).join("");
   return result;
 }
 
@@ -111,7 +118,12 @@ function renderRow(row) {
 }
 
 function generateSection(section) {
-  let html = `<section>
+  const layoutClass = "layout-stacked";
+  const slugClass = section.title
+    ? `section-${section.title.toLowerCase().replace(/\s+/g, "-")}`
+    : "section-summary";
+
+  let html = `<section class="${layoutClass} ${slugClass}">
   <h2>${escapeHtml(section.title)}</h2>
   <div class="section-content">\n`;
 
@@ -141,7 +153,7 @@ function generateHeader(data) {
   <div class="contact-info">
     <span class="protected bold" data-o="${escapeHtml(emailObf)}" data-type="email" title="Click to reveal">${escapeHtml(emailMasked)}</span>
     <span class="protected" data-o="${escapeHtml(phoneObf)}" data-type="phone" title="Click to reveal">${escapeHtml(phoneMasked)}</span>
-    <span>${escapeHtml(data.contact.location)}</span>
+    <span><a href="${escapeHtml(data.contact.locationUrl)}" target="_blank" rel="noopener noreferrer">${escapeHtml(data.contact.location)}</a></span>
   </div>
 </header>\n`;
 }
