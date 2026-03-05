@@ -183,7 +183,10 @@ function generateHeader(data) {
     <span class="protected" data-o="${escapeHtml(phoneObf)}" data-type="phone" title="Click to reveal">${escapeHtml(phoneMasked)}</span>
     <span>${formatInline(data.contact.location)}</span>
   </div>
-  <a href="ali-servet-donmez_resume.pdf" download class="pdf-download">Download PDF</a>
+  <a href="ali-servet-donmez_resume.pdf" download class="pdf-download" aria-label="Download as PDF">
+    <span class="pdf-download-icon" aria-hidden="true"></span>
+    <span class="pdf-download-label">Download as PDF</span>
+  </a>
 </header>\n`;
 }
 
