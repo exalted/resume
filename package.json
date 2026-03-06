@@ -28,5 +28,8 @@
   "homepage": "https://github.com/exalted/resume#readme",
   "devDependencies": {
     "puppeteer": "^24.38.0"
+  },
+  "dependencies": {
+    "pdf-lib": "^1.17.1"
   }
 }

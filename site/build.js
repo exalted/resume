@@ -198,7 +198,7 @@ function generateHeader(data) {
     <span>${formatInline(data.contact.linkedin)}</span>
     <span>${formatInline(data.contact.location)}</span>
   </div>
-  <a href="ali-servet-donmez_resume.pdf" download class="pdf-download" aria-label="Download as PDF">
+  <a href="${pdfFilename(data.name)}" download class="pdf-download" aria-label="Download as PDF">
     <span class="pdf-download-icon" aria-hidden="true"></span>
     <span class="pdf-download-label">Download as PDF</span>
   </a>
@@ -220,6 +220,11 @@ function generateContent(data) {
   return html;
 }
 
+// Derive PDF filename from name: "Ali Servet Donmez" -> "ali-servet-donmez_resume.pdf"
+function pdfFilename(name) {
+  return name.toLowerCase().replace(/\s+/g, "-") + "_resume.pdf";
+}
+
 // Exports for use by other scripts (e.g., build-pdf.js)
 module.exports = {
   escapeHtml,
@@ -230,6 +235,7 @@ module.exports = {
   renderTableRow,
   generateSection,
   generateContent,
+  pdfFilename,
 };
 
 if (require.main === module) {
