@@ -98,20 +98,33 @@ function formatText(text) {
     listItems = [];
   }
 
+  let paragraphLines = [];
+
+  function flushParagraph() {
+    if (!paragraphLines.length) return;
+    blocks.push(`<p>${paragraphLines.join("<br>")}</p>`);
+    paragraphLines = [];
+  }
+
   for (const line of lines) {
     const bulletMatch = line.match(/^\s*[-*]\s+(.+)$/);
     if (bulletMatch) {
+      flushParagraph();
       listItems.push(bulletMatch[1].trim());
       continue;
     }
 
     flushList();
 
-    if (!line.trim()) continue;
-    blocks.push(`<p>${formatLine(line)}</p>`);
+    if (!line.trim()) {
+      flushParagraph();
+      continue;
+    }
+    paragraphLines.push(formatLine(line));
   }
 
   flushList();
+  flushParagraph();
   return blocks.join("");
 }
 
@@ -181,6 +194,8 @@ function generateHeader(data) {
   <div class="contact-info">
     <span class="protected bold" data-o="${escapeHtml(emailObf)}" data-type="email" title="Click to reveal">${escapeHtml(emailMasked)}</span>
     <span class="protected" data-o="${escapeHtml(phoneObf)}" data-type="phone" title="Click to reveal">${escapeHtml(phoneMasked)}</span>
+    <span>${formatInline(data.contact.github)}</span>
+    <span>${formatInline(data.contact.linkedin)}</span>
     <span>${formatInline(data.contact.location)}</span>
   </div>
   <a href="ali-servet-donmez_resume.pdf" download class="pdf-download" aria-label="Download as PDF">

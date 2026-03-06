@@ -47,6 +47,8 @@ function generateHeaderForPdf(data) {
   <div class="contact-info">
     <span class="bold"><a href="mailto:${escapeHtml(data.contact.email)}">${escapeHtml(data.contact.email)}</a></span>
     <span><a href="tel:${escapeHtml(data.contact.phone)}">${escapeHtml(data.contact.phone)}</a></span>
+    <span>${formatInline(data.contact.github)}</span>
+    <span>${formatInline(data.contact.linkedin)}</span>
     <span>${formatInline(data.contact.location)}</span>
   </div>
 </header>\n`;

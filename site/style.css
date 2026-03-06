@@ -305,8 +305,15 @@ strong,
     font-size: 1rem;
   }
 
-  .contact-info span:last-child {
-    display: block;
+  .contact-info span:nth-child(2)::after {
+    content: "";
+    margin: 0;
+  }
+
+  .contact-info span:nth-child(3)::before,
+  .contact-info span:last-child::before {
+    content: "\A";
+    white-space: pre;
   }
 
   .contact-info span:nth-last-child(2)::after {
