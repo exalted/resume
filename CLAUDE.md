@@ -3,3 +3,7 @@ Most of the times it's not necessary to build the site, because the local develo
 It's best to look in site/ folder rather than the docs/ folder to understand how the website is build, since the former contains the source code to build the files in the latter.
 
 When I ask for visual changes, consider both desktop and mobile sizes/versions.
+
+This project does NOT use `nvm`. Do not prefix commands with `nvm exec`.
+
+Running `npm run` commands may require prefixing with `envchain exalted-resume` to inject required environment variables. For example: `envchain exalted-resume npm run site:dev`.
