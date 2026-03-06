@@ -106,7 +106,9 @@ console.log("Generated: docs/resume-pdf-debug.html");
 
 // Generate PDF
 (async () => {
-  const browser = await puppeteer.launch();
+  const browser = await puppeteer.launch({
+    args: process.env.CI ? ["--no-sandbox"] : [],
+  });
   const page = await browser.newPage();
   await page.setViewport({ width: 800, height: 1200 });
   await page.goto("file://" + htmlPath, { waitUntil: "networkidle0" });
