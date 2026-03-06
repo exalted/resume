@@ -25,10 +25,16 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: Debug vars context
+        run: |
+          echo "vars.PII_EMAIL = '${{ vars.PII_EMAIL }}'"
+          echo "vars.PII_PHONE = '${{ vars.PII_PHONE }}'"
+          echo "vars context keys: ${{ toJSON(vars) }}"
+
       - name: Build site
         env:
-          PII_EMAIL: ${{ secrets.PII_EMAIL }}
-          PII_PHONE: ${{ secrets.PII_PHONE }}
+          PII_EMAIL: ${{ vars.PII_EMAIL }}
+          PII_PHONE: ${{ vars.PII_PHONE }}
         run: npm run site:build
 
       - name: Clean up and prepare
