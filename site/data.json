@@ -62,7 +62,7 @@
         {
           "rows": [
         { "title": "2017–2025", "type": "simple", "value": "*Senior developer & senior cloud infrastructure engineer*\n*[Balsamiq](https://balsamiq.com)* _(Remote)_" },
-        { "title": "", "type": "simple", "value": "I joined Balsamiq, a widely-used wireframing software, to take over responsibility for various existing custom internal tools and security & compliance initiatives." },
+        { "title": "", "type": "simple", "value": "I joined Balsamiq, a widely-used wireframing software company, to take over responsibility for various existing custom internal tools and security & compliance initiatives." },
         { "title": "", "type": "simple", "value": "My most notable contributions over the years include:" },
         { "title": "", "type": "simple", "value": "- Building *AI services* via third-party LLM providers\n- Architecting and developing custom internal tools (e.g., payment & subscription management via *Stripe*, e-commerce, project management)\n- Managing *Elasticsearch* clusters for log management of production apps\n- Leading cloud infrastructure modernization with *AWS CDK*\n- Performing GDPR compliance audits\n- Managing security compliance and bug bounty programs (SOC2/Vanta, Bugcrowd, HackerOne)\n- Implementing multi-region data residency for customer data\n- Integrating observability and analytics tools (PostHog, Klaviyo)\n- Maintaining CI/CD pipelines using GitHub Actions across 15+ repositories" }
           ]
