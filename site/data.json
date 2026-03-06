@@ -44,7 +44,7 @@
                 ["Scripting", "Bash • Python • Ruby"],
                 ["Frameworks & Libs", "Node.js • Express.js • React • AWS CDK"],
                 ["Data Storage", "MySQL • Redis • Elasticsearch"],
-                ["Infrastructure (AWS)", "CDK • ECS • CloudFormation • S3 • Lambda • Lambda@Edge • API Gateway • CloudFront • RDS • OpenSearch • EFS • Secrets Manager • KMS • Route53 • ALB • _& more_"]
+                ["Infrastructure (AWS)", "ECS • CloudFormation • S3 • Lambda • Lambda@Edge • API Gateway • CloudFront • RDS • OpenSearch • EFS • Secrets Manager • KMS • Route53 • ALB • _& more_"]
               ]
             },
             {
