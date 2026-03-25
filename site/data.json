@@ -96,8 +96,8 @@
       "blocks": [
         {
           "rows": [
-            { "title": "2005–2008", "type": "simple", "value": "Board member and sysadmin of university students' association" },
-            { "title": "2005–Present", "type": "simple", "value": "Founder and admin of [GNU](https://www.gnu.org) Turkish translation team" }
+            { "title": "2005–Present", "type": "simple", "value": "Founder and admin of [GNU](https://www.gnu.org) Turkish translation team" },
+            { "title": "2005–2008", "type": "simple", "value": "Board member and sysadmin of university students' association" }
           ]
         }
       ]
